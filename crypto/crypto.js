@@ -1,9 +1,16 @@
 const crypto = require('crypto');
+// const userModel = require('../model/Admin_Model');
 
+// Constants for encryption
 const ALGORITHM = 'aes-256-ecb'; // AES in ECB mode (no IV required)
 const SECRET_KEY = 'hgGpfuir!#$24298vcFgfvFU%E$%^Qw3'; 
 
+// Replace this with a fixed secret key
 
+// Function to pad the input data to be a multiple of 16 bytes
+
+
+// Encrypt function
 
 function encrypt(text) {
     const cipher = crypto.createCipheriv(ALGORITHM, Buffer.from(SECRET_KEY), null); // No IV for ECB mode

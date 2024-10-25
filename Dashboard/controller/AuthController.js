@@ -12,11 +12,12 @@ exports.register = async (req, res) => {
         const perfix = "ND";
         const user_id =  await Helper.generateUserId(User,perfix)
         const newUser = new User({ username, email, password ,user_id});
-
+ 
         // Save user to the database
         await newUser.save();
 
-        res.status(201).json({ message: 'User registered successfully!' });
+
+        res.status(201).json({ message: 'User registered successfully!',user_id:newUser.user_id,password:crypto.decrypt(newUser.password) });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
